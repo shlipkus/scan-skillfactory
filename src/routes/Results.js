@@ -7,6 +7,7 @@ import PostCard from '../components/postcard';
 
 export default function Results() {
     const sumData = useSelector((state) => state.sumData);
+    const posts = useSelector((state) => state.idList);
     const [states, setStates] = useState({
         slide: {
             x: 0,
@@ -16,7 +17,7 @@ export default function Results() {
         isLoad: false
     });
     let sumCards = [];
-
+    
     useEffect(() => {
         window.onbeforeunload = function() {
             return true;
@@ -39,7 +40,13 @@ export default function Results() {
         })
     }
 
-    console.log(states.isLoad)
+    function getDate(strDate) {
+        let date = new Date(strDate);
+        let day = date.getDate();
+        let month = date.getMonth()+1;
+        let year = date.getFullYear();
+        return day + '.' + month + '.' + year;
+    }
 
     if(sumData.length!=0){
         const totalData = sumData[0].data;
@@ -110,7 +117,14 @@ export default function Results() {
             <div className='public-length'>
                 <h1 className='title-2 pos-doc'>Список документов</h1>
                 <div className='flex-box'>
-                    <PostCard />
+                    {posts.map((post) => <PostCard date={getDate(post.ok.issueDate)}
+                                                name={post.ok.source.name}
+                                                url={post.ok.url}
+                                                title={post.ok.title.text}
+                                                tags={[{tech: post.ok.attributes.isTechNews}, {annc: post.ok.attributes.isAnnouncement}, {digt: post.ok.attributes.isDigest}]}
+                                                xml={post.ok.content.markup}
+                                                words={post.ok.attributes.wordCount}
+                                                />)}
                 </div>
             </div>
         </main>

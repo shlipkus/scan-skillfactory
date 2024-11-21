@@ -242,7 +242,6 @@ export default function SearchPage() {
          })
         .then(function (response) {
           if(response.status==200){
-            console.log(response.data);
             dispatch({type: 'SETLIST', payload: response.data})
           }
         })
