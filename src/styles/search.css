@@ -1,0 +1,267 @@
+.subtitle {
+    position: absolute;
+    display: block;
+    width: 543px;
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    top: 185px;
+    left: 60px;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.2px;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    white-space: pre-line;
+}
+
+.pos-svg1 {
+    position: absolute;
+    top: 132px;
+    left: 938px;
+}
+
+.pos-svg2 {
+    position: absolute;
+    top: 150px;
+    left: 1195px;
+}
+
+.pos-svg3 {
+    position: absolute;
+    top: 350px;
+    left: 975px;
+}
+
+.search-block {
+    position: absolute;
+    width: 872px;
+    height: 543px;
+    top: 285px;
+    left: 53px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #00000033;
+}
+
+.search-form-label {
+    font-family: 'Inter';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    letter-spacing: 0.03em;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+
+.search-form-input {
+    width: 242px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font: 400 14px/17px 'inter';
+}
+
+.search-form-input:focus {
+    outline: none;
+}
+
+.search-form-select {
+    width: 242px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFFFFF;
+    margin: 0;
+    padding-left: 20px;
+    appearance: none;
+    background: url('../../public/assets/images/select.svg') no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    text-align: start;
+    font: 400 14px/17px 'inter';
+}
+
+.search-form-date {
+    width: 176px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font: 400 14px/17px 'inter';
+}
+
+.search-form-date:focus {
+    outline: none;
+}
+
+.search-form-option {
+    font: 400 14px/17px 'inter';
+}
+
+.pos-inn-label {
+    position: absolute;
+    top: 30px;
+    left: 44px;
+}
+
+.pos-inn-input {
+    position: absolute;
+    top: 72px;
+    left: 44px;
+}
+
+.pos-ton-label {
+    position: absolute;
+    top: 142px;
+    left: 44px;
+}
+
+.pos-ton-input {
+    position: absolute;
+    top: 184px;
+    left: 44px;
+}
+
+.pos-quan-label {
+    position: absolute;
+    top: 262px;
+    left: 44px;
+}
+
+.pos-quan-input {
+    position: absolute;
+    top: 304px;
+    left: 44px;
+}
+
+.pos-date-label {
+    position: absolute;
+    top: 372px;
+    left: 44px;
+}
+
+.pos-date-input {
+    position: absolute;
+    top: 414px;
+    left: 44px;
+}
+
+.pos-date-input2 {
+    position: absolute;
+    top: 414px;
+    left: 235px;
+}
+
+.asterisk {
+    position: relative;
+    top: -25%;
+    font: 400 25px/21px 'inter';
+}
+
+.check-boxes {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 406px;
+    height: 244px;
+}
+
+.check-boxes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.check-boxes li {
+    padding-bottom: 12px;
+}
+
+.li-label {
+    font: 400 18px/21px 'inter';
+    margin-left: 12px;
+    opacity: 40%;
+}
+
+.input-check {
+    appearance: none;
+    position: relative;
+    top: 2px;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    accent-color: white;
+    border: 1px solid;
+    opacity: 40%;
+}
+
+.input-check:checked {
+    background-image: url("../../public/assets/images/marker.svg");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    opacity: 100%;
+}
+
+.input-check:checked ~ label {
+    opacity: 100%;
+}
+
+.search-button {
+    width: 305px;
+    height: 59px;
+    border-radius: 5px;
+    border-style: none; 
+    background: #5970FF;
+    font-family: 'Inter';
+    font-weight: 500;
+    color: white;
+    font-size: 22px;
+    position: relative;
+    top: 345px;
+    left: 60%;
+    cursor: pointer;
+}
+
+input:required:invalid ~ input.search-button {
+    opacity: .5;
+    pointer-events: none;
+  }
+
+.search-button:active {
+    border-style:solid;
+}
+
+.under-text {
+    position: absolute;
+    top: 90%;
+    left: 60%;
+    font: 400 14px/16.94px 'inter';
+    color: #949494;
+}
+
+.input-error {
+    font: 400 14px/17px 'Inter';
+    color: #FF5959;
+    position: absolute;
+}
+
+.pos1 {
+    top: 340px;
+    left: 72px;
+}
+
+.pos2 {
+    top: 108px;
+    left: 72px;
+}

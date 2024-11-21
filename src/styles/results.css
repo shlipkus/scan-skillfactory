@@ -1,0 +1,170 @@
+.main-block {
+    height: 100%;
+}
+
+.page-head {
+    height: 352px;
+}
+
+.pre {
+    white-space: pre-line;
+}
+
+.pos-svg4 {
+    position: relative;
+    top: 35px;
+    left: 780px;
+}
+
+.title-2 {
+    font: 900 30px/36px 'Ferry';
+    margin-left: 60px;
+}
+
+.subtitle-2 {
+    font: 400 18px/21px 'Inter';
+    color: #949494;
+    margin-left: 60px;
+}
+
+.slider-box {
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    width: 1346px;
+    height: 158px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-window {
+    display: flex;
+    flex-direction: row;
+    width: 1260px;
+    height: 158px;
+    border: 2px solid #029491;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.prev, .next {
+    width: 39px;
+    height: 39px;
+    background-image: url("../../public/assets/images/right.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    outline: none;
+    background-color: white;  
+}
+
+.prev:disabled, .next:disabled {
+    opacity: 0.4;
+}
+
+.slider-labels {
+    position: relative;
+    width: 133px;
+    height: 158px;
+    background: #029491;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.slider-labels h1 {
+    font: 500 20px/24px 'Inter';
+    color: white;
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: relative;
+    top: 14px;
+    left: 22px;
+}
+
+.slider-length {
+    position: relative;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    transform: translateX(100px);
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+
+.slider-card {    
+    width: 138px;
+    height: 158px;
+}
+
+.line {
+    width: 2px;
+    height: 124px;
+    opacity: 0.4;
+    background: #949494;
+}
+
+.slider-card h3 {
+    font: 400 18px/21px 'Inter';
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: relative;
+    top: 18px;
+    text-align: center;
+}
+
+.loader {
+    width: 100%;
+}
+
+.loader h1 {
+    font: 400 18px/21px 'Inter';
+    position: relative;
+    top: 21%;
+    left: 40%;
+}
+
+@keyframes spin-rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+.spinner-loader {
+    position: relative;
+    top: 26%;
+    left: 46%;
+    animation-name: spin-rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(8, end);
+}
+
+.pos-doc {
+    margin-top: 100px;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 1320px;
+}
+
+.post-block {
+    margin-bottom: 36px;
+    width: 641px;
+    height: 694px;
+    background: red;
+}
+
+
+

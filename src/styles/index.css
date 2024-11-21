@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Ferry';
+    src:local("Ferry") url(../fonts/ferry_black.woff) format('woff');
+}
+
+#root {
+    margin: 0 auto;
+    width: 1440px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}

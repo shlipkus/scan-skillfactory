@@ -1,0 +1,124 @@
+main {
+    margin: 0;
+    padding: 0;
+    height: 2650px;
+}
+
+.top-content {
+    margin: 0 auto;
+    width: 1320px;
+    height: 620px;
+    padding: 0;
+}
+
+.text-content {
+    margin-top: 25px;
+    min-width: 743px;
+    height: 288px;
+}
+
+.text-content #big {
+    font-family: "Ferry";
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 72px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    white-space: pre-line;
+}
+
+.text-content #small {
+    margin-top: 5px;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 24px;
+    white-space: pre-line;
+}
+
+.top-content button {
+    width: 335px;
+    height: 59px;
+    border-radius: 5px;
+    border-style: none; 
+    background: #5970FF;
+    font-family: 'Inter';
+    font-weight: 500;
+    color: white;
+    font-size: 22px;
+    position: relative;
+    top: 150px;
+}
+
+.top-content button:active {
+    border-style:solid;
+}
+
+.content-2 {
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 1340px;
+    height: 350px;
+    padding: 0;
+}
+
+.content-2 h1 {
+    margin-left: 15px;
+    font-family: "Ferry";
+    font-size: 45px;
+    font-weight: 900;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.mid-picture {
+    margin-top: 20px;
+}
+
+.tarifs {    
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 1340px;
+    height: 350px;
+    padding: 0;
+}
+
+.tarifs h1 {
+    margin-left: 15px;
+    font-family: "Ferry";
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.tarifs-flexbox {
+    margin: 0;
+    margin-top: 100px;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.mid-picture {
+    margin: 100px 0 0 20px;
+    padding: 0;
+    width: 1340px;
+    height: 580px;
+    background-image: url("../../public/assets/images/midpic.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+}
+
+.man-pic {
+    width: 629px;
+    height: 620px;
+    position: absolute;
+    top: 6%;
+    left: 52%;
+    z-index: -1;
+}

@@ -1,0 +1,39 @@
+.footer {
+    height: 137px;
+    background-color: #029491;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer img {
+    position: relative;
+    left: 60px;
+}
+
+
+.text {
+    margin: 0;
+    padding: 30px 60px 0 0;
+}
+
+.adress {
+    display: inline-block;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+    color: white;
+    white-space: pre-line;
+}
+
+.copy {
+    position: relative;
+    top: 15px;
+    left: 95px;
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 400;
+    text-align: right;
+    color: white;
+}
