@@ -19,8 +19,8 @@ function ScanMain() {
         <main>
             <div className="top-content">
                 <div className="text-content">
-                <span id="big">{text}</span><br></br><br></br>
-                <span id="small">{subtext}</span></div>
+                <h1 id="big">{text}</h1>
+                <h2 id="small">{subtext}</h2></div>
                 {isAuth ? <button id="request" onClick={(e) => {navigate('/search')}}>Запросить данные</button>: null}
                 <img src={man} className="man-pic"/>
             </div>

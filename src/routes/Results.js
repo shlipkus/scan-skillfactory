@@ -3,6 +3,7 @@ import '../../src/styles/results.css';
 import resMain from '../../public/assets/images/res-main.svg?url';
 import { useDispatch, useSelector } from 'react-redux';
 import spin from '../../public/assets/images/spinner.svg?url';
+import PostCard from '../components/postcard';
 
 export default function Results() {
     const sumData = useSelector((state) => state.sumData);
@@ -80,7 +81,7 @@ export default function Results() {
     }
 
     return (
-        <main className='main-block'>
+        <main className='main-result'>
             <div className="page-head">
                 <h1 className="title pre">{"Ищем. Скоро \n будут результаты"}</h1>
                 <h2 className='subtitle'>{'Поиск может занять некоторое время, \n просим сохранять терпение.'}</h2>
@@ -109,14 +110,7 @@ export default function Results() {
             <div className='public-length'>
                 <h1 className='title-2 pos-doc'>Список документов</h1>
                 <div className='flex-box'>
-                    <div className='post-block'></div>
-                    <div className='post-block'></div>
-                    <div className='post-block'></div>
-                    <div className='post-block'></div>
-                    <div className='post-block'></div>
-                    <div className='post-block'></div>
-                    <div className='post-block'></div>
-                    <div className='post-block'></div>
+                    <PostCard />
                 </div>
             </div>
         </main>

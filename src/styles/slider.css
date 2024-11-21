@@ -11,7 +11,7 @@
 .slide-button {
     width: 39px;
     height: 39px;
-    background-image: url("../../public/assets/images/prev.png");
+    background-image: url("../../public/assets/images/right.svg");
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 20%;    
@@ -48,11 +48,13 @@
 }
 
 .card {
+    position: relative;
+    left: -2px;
     min-width: 400px;
     height: 225px;
     margin-right: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px #00000033;
+    box-shadow: 0px 0px 10px 0px #00000033;
 }
 
 .image-container {
@@ -82,3 +84,51 @@
     text-align: left;
 }
 
+@media (orientation: portrait) {
+    .slider-conteiner {
+        margin-top: 20px;
+        padding: 0;
+        height: 230px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .slider {
+        width: 100vw;
+        height: 210px;
+        padding: 0px;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .card {
+        position: relative;
+        left: 10px;
+        top: 10px;
+        min-width: auto;
+        width: 298px;
+        height: 188px;
+        margin-right: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px #00000033;
+    }
+
+    .card span {
+        display: inline-block;
+        position: relative;
+        width: 278px;
+        height: 44px;
+        top: 30px;
+        left: 20px; 
+        font: 400 16px/18px 'Inter';
+        text-align: left;
+    }
+
+    .image-container {
+        top: 20px;
+        width: 56px;
+        height: 64px;
+    }
+}

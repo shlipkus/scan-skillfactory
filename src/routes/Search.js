@@ -217,14 +217,39 @@ export default function SearchPage() {
            })
           .then(function (response) {
             if(response.status==200){
-              dispatch({type: 'SETLIST', payload: response.data.items})
+              let list = response.data.items;
+              getPosts(list, token);
             }
           })
           .catch(function (error) {
             console.log(error);
           });
+        
+    }
+    
+    function getPosts(list, token) {
+        const idList = [];
+        list.map((item) => idList.push(item.encodedId))
         //публикации
-    } 
+        axios.post('https://gateway.scan-interfax.ru/api/v1/documents',
+          {
+            "ids": idList
+          },
+          {
+          headers: {
+            Authorization: 'Bearer ' + token 
+          }
+         })
+        .then(function (response) {
+          if(response.status==200){
+            console.log(response.data);
+            dispatch({type: 'SETLIST', payload: response.data})
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
     
     return (
         <main className='main-block'>

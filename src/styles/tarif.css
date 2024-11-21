@@ -149,3 +149,107 @@
     border-style:solid;
 }
 
+@media (orientation: portrait) {
+    .tarif-card {
+        width: 345px;
+        height: 512px;
+        margin-bottom: 40px;
+        overflow: hidden;
+        box-shadow: 0px 0px 10px 0px #00000033;      
+    }
+
+    .card-head {
+        width: 345px;
+        height: 132px;
+        background-repeat: no-repeat;
+        background-position: 95% 15%;
+        background-size: 60px;
+    }
+
+    .card-head h1 {
+        font: 500 20px/24px 'Inter';
+        position: relative;
+        top: 30px;
+        left: 30px;
+    }
+    
+    .card-head span {
+        font: 400 18px/22px 'Inter';
+        left: 30px;
+        top: 52px;
+    }
+    
+    
+    .current-tarif {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: 2%;
+        left: 65%;
+        width: 134px;
+        height: 24px;
+        border-radius: 10px;
+        background: #3BA5E0;
+        font-family: 'Inter';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0.01em;
+        text-align: center;
+        color: white;
+    }
+    
+    .prices {
+        position: absolute;
+        top: 30%;
+        left: 30px;
+    }  
+    
+    .old-price {
+        margin-left: 20px;
+        font-size: 25px;
+        line-height: 30.26px;
+        letter-spacing: 0.01em;
+        text-align: left;
+        text-decoration: line-through;
+        opacity: 50%;
+    }    
+    
+   
+    .credit {
+        margin-right: 35px;
+        position: absolute;
+        top: 39%;
+        left: 30px;
+    }
+    
+    .list-tarif {
+        position: absolute;
+        top: 58%;
+        left: 14px;
+        list-style-image: url("../../public/assets/images/marker.svg");
+    }
+
+    .list-tarif li {
+        font: 400 16px/19px 'Inter';
+    }
+    
+    .list-name {
+        top: 52%;
+        left: 30px;
+        font: 500 18px/21px 'Inter';   
+    }
+    
+    .detail-button {
+        top: 82%;
+        left: 8%;
+        width: 286px;
+        height: 59px;
+        font: 400 18px/21px 'Inter';        
+        color: white;
+    }
+    
+    .detail-button:active {
+        border-style:solid;
+    }
+}

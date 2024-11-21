@@ -1,0 +1,42 @@
+.post-card {
+    margin-bottom: 36px;
+    width: 641px;
+    height: 694px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #00000033;
+}
+
+.post-card h4 {
+    font: 400 16px/20px 'Inter';
+    color: #949494;
+    margin-left: 30px;
+}
+
+.post-card a {
+    color: #949494;
+    margin-left: 15px;
+}
+
+.post-title {
+    display: block;
+    margin-left: 30px;
+    width: 546px;
+    height: 62px;
+    font: 500 25px/31px 'Inter';
+    white-space: pre-line;
+}
+
+.tag-line {
+    margin-left: 30px;
+}
+
+.tag {
+    display: inline-block;
+    width: 157px;
+    height: 22px;
+    border-radius: 5px;
+    background: #FFB64F;
+    font: 400 12px/22px 'Inter';
+    text-align: center;
+    margin-right: 2px;
+}

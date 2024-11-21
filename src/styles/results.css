@@ -1,4 +1,7 @@
-.main-block {
+.main-result {
+    margin: 0;
+    padding: 0;
+    position: relative;
     height: 100%;
 }
 
@@ -155,7 +158,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 60px auto 0 auto;
     width: 1320px;
 }
 

@@ -19,21 +19,41 @@
 
 .adress {
     display: inline-block;
-    font-family: 'Inter';
-    font-size: 14px;
-    font-weight: 400;
+    font: 400 14px/16px 'Inter';
     text-align: right;
     color: white;
     white-space: pre-line;
 }
 
 .copy {
+    display: block;
     position: relative;
     top: 15px;
-    left: 95px;
     font-family: 'Inter';
     font-size: 12px;
     font-weight: 400;
     text-align: right;
     color: white;
+}
+
+@media (orientation: portrait) {
+    .footer {
+        height: 137px;
+        background-color: #029491;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .text {
+        padding: 30px 20px 0 0;
+    }
+
+    .footer img {
+        position: relative;
+        left: 16px;
+        top: -16px;
+        width: 111px;
+        height: 111px;
+    }
 }

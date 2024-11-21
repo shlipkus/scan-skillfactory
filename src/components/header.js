@@ -28,20 +28,22 @@ function ScanHeader() {
     const onAuth = <div className="on-auth">
         <div className="user-requests">
             <span className='text-info'>Использовано компаний</span>
+            <span className='used'>{usedInfo}</span>
             <span className='text-info'>Лимит по компаниям</span>
-        </div>
-        <span className='used'>{usedInfo}</span>
-        <span className='limit'>{limitInfo}</span>
+            <span className='limit'>{limitInfo}</span>
+        </div>       
+        
         <div className="user-info">
             <span className="username">Алексей А.<Link className='logout' onClick={logOut}>Выйти</Link></span>
             <img src={ava} width={32} height={32} style={{marginLeft: '5px'}}/>            
         </div>
+        
     </div>
 
     return (
         <header className="header">
             <div className="logo">
-                <img src={Logo} alt="Logo" width={141} height={141}/>
+                <img src={Logo} alt="Logo" />
             </div>
             <div className="links">
                 <Link className='link' to="/">Главная</Link>
@@ -49,6 +51,7 @@ function ScanHeader() {
                 <Link className='link' to="/">FAQ</Link>
             </div>
             {isAuth ? onAuth: noAuth}
+            <div className="menu"></div>
         </header>
     )
 }
