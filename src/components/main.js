@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/scanmain.css"
 import ScSlider from "./carousel";
 import { useNavigate } from "react-router-dom";
@@ -44,6 +44,7 @@ function ScanMain() {
                         list={['Безлимитная история запросов',
                             'Безопасная сделка',
                             'Поддержка 24/7']}
+                        current={false}
                     />
                     <TarifCard color={'#7CE3E1'} title={'Pro'} 
                         subtitle={'Для HR и фрилансеров'}
@@ -54,6 +55,7 @@ function ScanMain() {
                         list={['Все пункты тарифа Beginner',
                             'Экспорт истории',
                             'Рекомендации по приоритетам']}
+                        current={true}
                     />
                     <TarifCard color={'#000000'} title={'Business'} 
                         subtitle={'Для корпоративных клиентов'}
@@ -64,6 +66,7 @@ function ScanMain() {
                         list={['Все пункты тарифа Pro',
                             'Безлимитное количество запросов',
                             'Приоритетная поддержка']}
+                        current={false}
                     />
                 </div>
             </div>

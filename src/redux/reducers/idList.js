@@ -3,7 +3,7 @@ export default function idListReducer ( state = [], action ) {
         case 'SETLIST':
             return action.payload;        
         case 'DELETELIST':
-            return 0;
+            return [];
         default:
             return state
     }

@@ -17,7 +17,6 @@ function ScSlider() {
       let dx = cards[0].offsetWidth + 20;
       let viewCount = Math.floor(slider[0].offsetWidth/dx)
 
-      console.log(dx)
       if(e.target.id == "next") {            
         if(((cards.length - viewCount) * -dx) < x) setSlide({...slide, x: x - dx});        
       }

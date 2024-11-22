@@ -169,5 +169,22 @@
     background: red;
 }
 
+.more {
+    position: relative;
+    left: calc(100%/2 - 150px);
+    margin-bottom: 100px;
+    width: 305px;
+    height: 59px;
+    border-radius: 5px;
+    border: none;
+    background: #5970FF;
+    font: 500 22px/26px 'Inter';
+    color: white;
+}
+
+.more:active {
+    border: 2px solid white;
+}
+
 
 

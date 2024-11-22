@@ -57,13 +57,13 @@ export default function SearchPage() {
     function changeStartDate(e) {
       let val = e.target.value;
       let valid = true;
-      setValid({...validState, quan: val, quanValid: valid})
+      setValid({...validState, startDate: val, quanValid: valid})
     }
 
     function changeEndDate(e) {
       let val = e.target.value;
       let valid = true;
-      setValid({...validState, quan: val, quanValid: valid})
+      setValid({...validState, endDate: val, quanValid: valid})
     }
 
     function changeBsnsNws(e) {
@@ -74,9 +74,12 @@ export default function SearchPage() {
     function getData() {
         const token = window.localStorage.getItem('accessToken')
         //общая сводка
+        dispatch({type: 'RM_SUM_DATA'});
+        dispatch({type: 'DELETELIST'});
+        dispatch({type: 'DELETEPOSTS'})
         axios.post('https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms',
             {
-                "intervalType": "day",
+                "intervalType": "month",
                 "issueDateInterval": {
                   "startDate": validState.startDate,
                   "endDate": validState.endDate
@@ -127,7 +130,7 @@ export default function SearchPage() {
                   "excludeDigests": !checks.isDgst
                 },
                 "similarMode": "duplicates",
-                "limit": '7', // чет не пашет, или в общей сводке не ограничиваются данные
+                "limit": validState.quan, // чет не пашет, или в общей сводке не ограничиваются данные
                 "sortType": "issueDate",
                 "sortDirectionType": "asc",
                 "histogramTypes": [
@@ -141,7 +144,7 @@ export default function SearchPage() {
             }
            })
           .then(function (response) {
-            if(response.status==200){
+            if(response.status==200){                
                 dispatch({type: 'ADD_SUM_DATA', payload: response.data.data})
             }
           })
@@ -151,7 +154,7 @@ export default function SearchPage() {
         //список id публикаций
         axios.post('https://gateway.scan-interfax.ru/api/v1/objectsearch',
             {
-                "intervalType": "day",
+                "intervalType": "month",
                 "issueDateInterval": {
                   "startDate": validState.startDate,
                   "endDate": validState.endDate
@@ -217,8 +220,7 @@ export default function SearchPage() {
            })
           .then(function (response) {
             if(response.status==200){
-              let list = response.data.items;
-              getPosts(list, token);
+              dispatch({type: 'SETLIST', payload: response.data.items})
             }
           })
           .catch(function (error) {
@@ -226,29 +228,7 @@ export default function SearchPage() {
           });
         
     }
-    
-    function getPosts(list, token) {
-        const idList = [];
-        list.map((item) => idList.push(item.encodedId))
-        //публикации
-        axios.post('https://gateway.scan-interfax.ru/api/v1/documents',
-          {
-            "ids": idList
-          },
-          {
-          headers: {
-            Authorization: 'Bearer ' + token 
-          }
-         })
-        .then(function (response) {
-          if(response.status==200){
-            dispatch({type: 'SETLIST', payload: response.data})
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
+       
     
     return (
         <main className='main-block'>

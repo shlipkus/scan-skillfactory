@@ -145,6 +145,11 @@
     color: white;
 }
 
+.cur-col {
+    background: #d2d2d2;
+    color: black
+}
+
 .detail-button:active {
     border-style:solid;
 }

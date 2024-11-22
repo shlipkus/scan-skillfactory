@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import '../styles/postcard.css';
 
 
 
 function PostCard(props) {
+    const [img, setImg] = useState('');
     const DOMParse = new DOMParser();    
     const tagsName = {
         tech: 'Технические новости',
@@ -11,13 +12,27 @@ function PostCard(props) {
         digt: 'Сводки новостей'
     }
     
+    function getImgSrc(imgArr) {
+        imgArr.shift();
+        if(imgArr.length==0) return
+        let fimg = imgArr.pop().split('"');
+        fimg.shift();
+        fimg.pop();
+        if(fimg[0]=='') return
+        if(img=='') setImg(fimg[0]);
+    }
    
     function cleanText(xml) {
         if(xml=='') return 'nothing';
         let pXml = DOMParse.parseFromString(xml, 'text/xml');
         let val = pXml.getElementsByTagName('scandoc')[0];
-        let text = val.textContent;
-        return text.replace(/<[^>]*>/g, '').slice(0, 1000);
+        let imgArr = val.textContent.split('img ');
+        getImgSrc(imgArr);
+        let text = val.textContent.replace('</p>', '\n');
+        let formatTxt = text.replace(/<[^>]*>/g, '').slice(0, 800);
+        let txtArr = formatTxt.split('. ');
+        if(txtArr.length>1) txtArr.pop();
+        return txtArr.join('. ')+'.'
     }
 
     function getTagName(tag) {        
@@ -43,6 +58,7 @@ function PostCard(props) {
             <div className='tag-line'>
                 {props.tags.map((tag)=>getTagName(tag))}
             </div>
+            {img != '' ? <img src={img} className='post-img'/>: null}
             <div className='content'>
                 {cleanText(props.xml)}
             </div>
@@ -50,16 +66,6 @@ function PostCard(props) {
             <span className='words'>{props.words} {getSuff(props.words)}</span>
         </div>
     )
-}
-
-PostCard.defaultProps = {
-    date: '13.09.2021',
-    url: '',
-    name: 'Комсомольская правда KP.RU',
-    title: 'Скиллфэктори - лучшая онлайн-школа \n для будущих айтишников',
-    tags: [{tech: true}, {annc: true}, {digt: false}],
-    xml: '',
-    words: '100'
 }
 
 export default PostCard;
