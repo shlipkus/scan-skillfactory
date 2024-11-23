@@ -233,6 +233,10 @@
     cursor: pointer;
 }
 
+.search-button:hover {
+    background-color: darkblue;
+}
+
 input:required:invalid ~ input.search-button {
     opacity: .5;
     pointer-events: none;

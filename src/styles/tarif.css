@@ -154,7 +154,7 @@
     border-style:solid;
 }
 
-@media (orientation: portrait) {
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
     .tarif-card {
         width: 345px;
         height: 512px;

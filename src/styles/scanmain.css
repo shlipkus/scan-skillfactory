@@ -71,6 +71,7 @@ main {
 
 button:hover {
     cursor: pointer;
+    background-color: darkblue;
 }
 
 .mid-picture {
@@ -121,7 +122,10 @@ button:hover {
 }
 
 
-@media (orientation: portrait) {
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
+    .main {
+        width: 100vw;
+    }
     .top-content {
         margin: 0 auto;        
         width: 100vw;

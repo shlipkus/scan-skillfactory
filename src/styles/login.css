@@ -179,6 +179,11 @@ input:required:invalid ~ input.login-submit {
     border-style: solid;
 }
 
+.login-submit:hover {
+    background-color: darkblue;
+    cursor: pointer;
+}
+
 .restore-link {
     position: relative;
     top: 33%;

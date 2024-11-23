@@ -1,0 +1,191 @@
+@media (orientation: landscape){
+    .menu {
+        display: none;
+    }
+}
+
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
+    .menu-button {
+        margin-right: 20px;
+        margin-top: 30px;
+        padding:0;
+        width: 30px;
+        height: 30px;
+        background-color: rgba(0,0,0,0.0);
+        border: none;
+        background-image: url("../../public/assets/images/menu.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        flex-shrink: 0;
+        rotate: -180deg;
+        transition: rotate 0.2s;
+    }
+
+    .close-button {
+        position: relative;
+        margin-right: 20px;
+        margin-top: 30px;
+        padding:0;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: rgba(0,0,0,0.0);
+        background-image: url("../../public/assets/images/close.svg");        
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 3;
+        rotate: -90deg;
+        transition: rotate 0.1s;
+    }
+
+    .slide-panel-wrapper {
+        position: absolute;
+        width: 100vw;
+        height: 1000%;
+        top: 0%;
+        left: 0%;                
+        background: #029491;
+        transition: opacity 0.5s;
+    }
+
+    @keyframes slide-on {
+        from {
+          width: 0%;
+          opacity: 0%
+        }
+        to {
+          width: 100%;
+          opacity: 100%;
+        }
+      }
+
+      @keyframes slide-off {
+        from {
+          width: 100%;
+          opacity: 100%
+        }
+        to {
+          width: 0%;
+          opacity: 0%;
+        }
+      }
+
+    .slider-fill {
+        display: flex;
+        justify-content: end;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 1000%;        
+        background: rgba(0,0,0,0);
+    }
+
+    .under {
+        z-index: -1;
+        transition: z-index 0.5s;
+    }
+
+    .on {
+        z-index: 1;
+    }
+
+    .fill {
+        position: relative;        
+        background: #029491;
+        height: 1000%;
+        z-index: 1;
+    }
+
+    .run {
+        animation-name: slide-on;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    .back-run {
+        animation-name: slide-off;
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+  
+
+    .no-vis {
+        opacity: 0%;
+        z-index: -1;
+    }
+
+    .vis {
+        opacity: 100%;
+        z-index: 2;
+    }
+
+    .menu-logo {
+        position: absolute;
+        top: -14px;
+        left: 15px;
+        width: 111px;
+        height: 111px;
+        z-index: 3;
+    }
+
+    .links-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 65px;
+        height: 110px;
+        top: 150px;
+        margin: 0 auto;
+    }
+
+    .nav-link {
+        font: 400 16px/19px 'Inter';
+        text-decoration: none;
+        color: white;
+    }
+
+    .nav-logout {
+        position: absolute;
+        top: 90vh;
+        left: calc(100vw/2 - 20px);
+        font: 400 16px/19px 'Inter';
+        text-decoration: none;
+        color: white;
+        opacity: 40%;
+    }
+
+    .reg {
+        opacity: 40%;
+    }
+
+    .sign {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        top: 40vh;
+        margin: 0 auto;        
+    }
+
+    .sign-in {
+        width: 295px;
+        height: 52px;
+        border-radius: 5px;
+        border: none;
+        background: #7CE3E1;
+        font: 500 20px/24px 'Inter';
+    }
+
+    .sign-in:active {
+        border: 2px solid white;
+    }
+
+}

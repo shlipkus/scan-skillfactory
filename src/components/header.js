@@ -1,9 +1,10 @@
 import React from "react";
 import "../styles/header.css";
-import Logo from '../../public/assets/images/Logo.svg?url';
+import Logo from '../../public/assets/images/alfalogo.svg?url';
 import ava from '../../public/assets/images/ava.png';
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import SideMenu from "./navmenu";
 
 function ScanHeader() {
     const navigate = useNavigate();
@@ -51,7 +52,7 @@ function ScanHeader() {
                 <Link className='link' to="/">FAQ</Link>
             </div>
             {isAuth ? onAuth: noAuth}
-            <div className="menu"></div>
+            <SideMenu logOut={logOut}/>
         </header>
     )
 }

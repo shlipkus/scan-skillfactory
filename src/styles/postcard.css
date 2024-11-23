@@ -67,6 +67,10 @@
     border: 2px solid #ffffff;
 }
 
+.source:hover {
+    background-color: aqua;
+}
+
 .words {
     position: absolute;
     top: 650px;

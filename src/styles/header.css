@@ -5,7 +5,7 @@
     height: 93px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between;    
 }
 
 .logo {
@@ -41,6 +41,10 @@
     font-weight: 400;
     color: black;
     font-size: 14px;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 .logout {
@@ -152,11 +156,11 @@
 
 }
 
-.menu {
-    display: none;
-}
 
-@media (orientation: portrait) {
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
+    .auth {
+        display: none;
+    }
     .header {
         margin: 0;
         padding: 0;
@@ -165,6 +169,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+
+       
     }
 
     .logo {
@@ -173,6 +179,7 @@
         width: 20%;
         display: flex;
         align-items: center;
+
     }
     
     .logo img {
@@ -180,6 +187,7 @@
         left: 14px;
         width: 111px;
         height: 111px;
+        
     }
 
     .links {
@@ -190,18 +198,7 @@
         display: none;
     }
 
-    .menu {
-        display: block;
-        margin-right: 20px;
-        margin-top: 30px;
-        width: 30px;
-        height: 25px;
-        background-image: url("../../public/assets/images/menu.svg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        flex-shrink: 0;
-    }
-
+    
     .user-requests {
         position: relative;
         left: 50%;

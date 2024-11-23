@@ -10,10 +10,10 @@
 
 body {
     margin: 0;
-    padding: 0;
-}
+    padding: 0;}
 
-@media (orientation: portrait) {
+
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
     #root {
         margin: 0 auto;
         width: 100vw;

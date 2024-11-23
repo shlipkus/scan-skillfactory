@@ -84,7 +84,7 @@
     text-align: left;
 }
 
-@media (orientation: portrait) {
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
     .slider-conteiner {
         margin-top: 20px;
         padding: 0;
@@ -108,7 +108,7 @@
         left: 10px;
         top: 10px;
         min-width: auto;
-        width: 298px;
+        width: calc(100vw - 64px - 20px);
         height: 188px;
         margin-right: 20px;
         border-radius: 10px;
