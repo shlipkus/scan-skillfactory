@@ -1,0 +1,173 @@
+.date-div {
+    margin: 0;
+    padding: 0;
+}
+
+.input-block {
+    width: 176px;
+    height: 43px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFFFFF;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.date-input {
+    width: 133px;
+    height: 43px;
+    background: #FFFFFF;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font: 400 14px/17px 'inter';
+}
+
+
+.date-input:focus {
+    outline: none;
+}
+
+.select-button {
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    background-color: white;
+    background: url('../../public/assets/images/select.svg') no-repeat;
+    background-position-x: 65%;
+    background-position-y: 60%;
+    border-style: none;
+}
+
+.select-button:hover {
+    background-color: white;
+}
+
+.dates {
+    position: absolute;
+    margin-top: 2px;
+    width: 235px;
+    height: 225px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFFFFF;
+    z-index: 1;
+}
+
+.date-select {
+    width: 88px;
+    height: 43px;
+    border-radius: 5px;
+    border-style: none;
+    background: #FFFFFF;
+    margin: 0;
+    padding-left: 20px;
+    appearance: none;
+    background: url('../../public/assets/images/select.svg') no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
+    text-align: start;
+    font-size: 110%;
+    font-weight: 400;
+}
+
+.date-select:hover {
+    background-color: white;
+}
+
+.date-select option {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.years {
+    position: absolute;
+    margin-left: 2px;
+    width: 82px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFFFFF;
+    overflow-y:scroll;
+}
+
+.years ul {
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+
+}
+
+.years li {
+    margin-left: 0px;
+    padding-left: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.years li:hover {
+    background-color: #5970FF;
+}
+
+.month {
+    width: 105px;
+}
+
+.months {
+    position: absolute;
+    margin-left: 105px;
+    width: 105px;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+    background: #FFFFFF;
+    overflow-y:scroll;
+}
+
+.months ul {
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+
+}
+
+.months li {
+    margin-left: 0px;
+    padding-left: 20px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.months li:hover {
+    background-color: #5970FF;
+}
+
+.days {
+    display: grid;
+    list-style-type: none;
+    width: 230px;
+    height: 150px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 0;
+    grid-template-columns: repeat(7, 30px);
+    grid-template-rows: repeat(5, 30px);
+}
+
+.day {
+    cursor: pointer;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.day:hover {
+    background-color: #5970FF;
+    color: white;
+}
+
+
+

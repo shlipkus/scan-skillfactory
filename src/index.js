@@ -10,6 +10,8 @@ import SearchPage from "./routes/Search";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import Results from "./routes/Results";
+import DateInput from "./components/date";
+
 
 
 // Clear the existing HTML content
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
             {
                 path: '/results',
                 element: <Results />
+            },
+            {
+                path: '/test',
+                element: <DateInput />
             }
         ]
     }        

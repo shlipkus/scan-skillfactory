@@ -6,6 +6,7 @@ import Serg from '../../public/assets/images/chel.svg?url';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
+import DateInput from '../components/date';
 
 
 export default function SearchPage() {
@@ -17,6 +18,7 @@ export default function SearchPage() {
 
 
     function handleSubmit(e) {
+      console.log(e.target);
       getData();
       e.preventDefault();
       navigate('/results'); 
@@ -252,8 +254,11 @@ export default function SearchPage() {
                           {!validState.quanValid ? <Errorinput classerr='input-error pos1'/>: null}
                           {!validState.innValid ? <Errorinput classerr='input-error pos2'/>: null}
                     <label className="search-form-label pos-date-label" htmlFor='date'>Диапазон поиска<span className='asterisk'>*</span></label><br />
-                    <input type='date' defaultValue='2024-10-01' className="search-form-date pos-date-input" required id="date" style={{borderColor: setColorDate()}} onChange={changeStartDate}>                      
-                    </input><input type='date' defaultValue='2024-11-01' className="search-form-date pos-date-input2" required id="date" style={{borderColor: setColorDate()}} onChange={changeEndDate}></input>
+                    <DateInput classInput='pos-date-input' onChange={changeStartDate}/>
+                    <DateInput classInput='pos-date-input2' onChange={changeEndDate}/>
+
+{/*                     <input type='date' defaultValue='2024-10-01' className="search-form-date pos-date-input" required id="date" style={{borderColor: setColorDate()}} onChange={changeStartDate} />                      
+                    <input type='date' defaultValue='2024-11-01' className="search-form-date pos-date-input2" required id="date" style={{borderColor: setColorDate()}} onChange={changeEndDate}></input> */}
                     <div className="check-boxes">
                         <ul>                            
                             <li><input className="input-check" type='checkbox' id="flns" onChange={(e) => setChecks({...checks, maxFlnss: e.target.checked})}/><label className="li-label" htmlFor='flns'>Признак максимальной полноты</label></li>

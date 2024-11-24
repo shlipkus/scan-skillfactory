@@ -87,7 +87,8 @@
     background-position-x: 95%;
     background-position-y: 50%;
     text-align: start;
-    font: 400 14px/17px 'inter';
+    font-size: 110%;
+    font-weight: 400;
 }
 
 .search-form-date {
@@ -98,6 +99,9 @@
     background: #FFFFFF;
     margin: 0;
     padding: 0;
+    background: url('../../public/assets/images/select.svg') no-repeat;
+    background-position-x: 95%;
+    background-position-y: 50%;
     text-align: center;
     font: 400 14px/17px 'inter';
 }
