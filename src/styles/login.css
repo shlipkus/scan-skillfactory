@@ -210,6 +210,7 @@ input:required:invalid ~ input.login-submit {
 .button-1 {
     width: 96px;
     height: 31px;
+    padding: 0;
     margin-right: 10px;
     border-style: none;
     border-radius: 2px;
@@ -241,6 +242,152 @@ input:required:invalid ~ input.login-submit {
     font: 400 14px/17px 'Inter';
     color: #FF5959;
     position: relative;
-    top: 64px;
+    top: 138px;
     left: 128px;
+}
+
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
+    .main-block {
+        margin: 0;
+        padding: 0;
+        position: static;
+        height: auto;
+    }
+
+    .title {
+        position: static;
+        margin: 20px 0px 0px 20px;
+        padding: 0;
+        display: block;
+        width: 350px;
+        height: 104px;
+        font: 900 22px/26px 'Ferry';
+        text-align: left;
+    }
+
+    .login-form {
+        position: static;
+        width: 335px;
+        height: 600px;
+        margin: 40px auto 60px auto;
+    }
+
+    .form-div {
+        width: 335px;
+        height: 504px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 0px #00000026;
+        position: static;
+    }
+
+    .char-pic {
+        display: block;
+        width: 335px;
+        height: 356px;
+        position: static;
+        margin: 0 auto 80px auto;
+    }
+
+    .lock-pic {
+        position: relative;
+        width: 75px;
+        height: 92px;
+        z-index: 1;
+        top: 20px;
+        left: 80px;
+    }
+
+    .login-text {
+        display: inline-block;
+        position: static;
+        margin: 35px 0px 0px 50px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    
+    .reg-text {
+        display: inline-block;
+        position: static;
+        margin: 35px 0px 0px 70px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+    
+    .rect-1 {
+        position: static;
+        display: inline-block;
+        margin: 0 0 0 18px;
+        width: 103px;
+        height: 2px;
+        background: #029491;
+    }
+    
+    .rect-2 {
+        position: static;
+        display: inline-block;
+        margin: 0 0 0 18px;
+        width: 182px;
+        height: 2px;
+        background: #C7C7C7;
+    }
+
+    .login-label {
+        font-size: 14px;
+        line-height: 16px;
+        position: static;
+        display: inline-block;
+        margin: 40px 0 0 18px;
+    }
+    
+    .login-input {
+        position: static;
+        padding-left: 15px;
+        width: 285px;
+        height: 35px;
+        font-size: 14px;
+        line-height: 16px;
+        margin: 15px 0 0 18px;
+    }
+
+    .pos-pass-label {
+        margin: 25px 0 0 18px;
+    }
+
+    .login-submit {
+        position: static;
+        margin: 12px 0 0 18px;
+        padding: 0;
+        width: 305px;
+        height: 59px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .restore-link {
+        position: static;
+        display: block;
+        margin: 15px auto 0 85px;
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+
+    .pos-alt-login {
+        margin: 20px 0 0 18px;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .social {
+        position: static;
+        margin: 5px 0 0 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .pass-error {
+        position: static;
+        display: block;
+        margin: 5px 0 0 90px;
+    }
 }

@@ -241,7 +241,7 @@
     background-color: darkblue;
 }
 
-input:required:invalid ~ input.search-button {
+.search-button:disabled {
     opacity: .5;
     pointer-events: none;
   }
@@ -272,4 +272,9 @@ input:required:invalid ~ input.search-button {
 .pos2 {
     top: 108px;
     left: 72px;
+}
+
+.pos3 {
+    top: 460px;
+    left: 125px;
 }

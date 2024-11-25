@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/search.css';
 import Docs from '../../public/assets/images/doc.svg?url';
 import Fold from '../../public/assets/images/fold.svg?url';
@@ -10,32 +10,32 @@ import DateInput from '../components/date';
 
 
 export default function SearchPage() {
+    const currentDate = new Date();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const Errorinput = (props) => <h1 className={props.classerr}>Введите корректные данные</h1>;
-    const [validState, setValid] = useState({inn: '', innValid: true, ton: 'any', tonValid: false, quan: '', quanValid: true, startDate: '2024-10-01', endDate: '2024-11-01', dateValid: true});
+    const [validState, setValid] = useState({inn: '', innValid: false, ton: 'any', tonValid: false, quan: '', quanValid: false, startDate: currentDate, endDate: currentDate, dateValid: true});
     const [checks, setChecks] =useState({maxFlnss: false, inBsnsNews: null, onlyMnRl: false, onlyWthRsk: false, isTchNws: false, isAnnc: false, isDgst: false});
 
 
     function handleSubmit(e) {
-      console.log(e.target);
       getData();
       e.preventDefault();
       navigate('/results'); 
     }
 
     function setColorInn () {
-        return !validState.innValid ? '#FF5959': '#C7C7C7'}
+        return !validState.innValid && validState.inn!='' ? '#FF5959': '#C7C7C7'}
         
     function setColorQuan () {
-        return !validState.quanValid ? '#FF5959': '#C7C7C7'}
+        return !validState.quanValid && validState.quan!='' ? '#FF5959': '#C7C7C7'}
 
     function setColorDate () {
           return !validState.dateValid ? '#FF5959': '#C7C7C7'}
 
 
     function validQuan(val) {
-      return (val > 0 && val <= 1000)||!isNaN(Number(val))
+      return (val > 0 && val <= 1000) && !isNaN(Number(val))
     }
 
     function validInn(val) {
@@ -56,16 +56,28 @@ export default function SearchPage() {
       setValid({...validState, quan: val, quanValid: valid})
     }
 
-    function changeStartDate(e) {
-      let val = e.target.value;
-      let valid = true;
-      setValid({...validState, startDate: val, quanValid: valid})
+    function toValidDate(val) {
+      return val.split('.').reverse().join('-')
     }
 
-    function changeEndDate(e) {
-      let val = e.target.value;
+    function changeStartDate(value) {  
+      let startDate = new Date(toValidDate(value));
+      let endDate = validState.endDate;
       let valid = true;
-      setValid({...validState, endDate: val, quanValid: valid})
+      if (startDate.getTime() >= endDate.getTime()) valid = false;
+      setValid({...validState, startDate: startDate, dateValid: valid})
+    }
+
+    function changeEndDate(value) {
+      let valid = true;
+      let endDate = new Date(toValidDate(value));
+      let startDate = validState.startDate;
+      if (startDate.getTime() >= endDate.getTime()) valid = false;
+      setValid({...validState, endDate: endDate, dateValid: valid})
+    }
+
+    function inputChange(e) {
+      return
     }
 
     function changeBsnsNws(e) {
@@ -146,7 +158,7 @@ export default function SearchPage() {
             }
            })
           .then(function (response) {
-            if(response.status==200){                
+            if(response.status==200){             
                 dispatch({type: 'ADD_SUM_DATA', payload: response.data.data})
             }
           })
@@ -241,7 +253,7 @@ export default function SearchPage() {
             <img className='pos-svg3' src={Serg} width={443} height={470} />
             <div className='search-block'>
                 <form onSubmit={handleSubmit} >
-                    <label className="search-form-label pos-inn-label" htmlFor='inn'>ИНН компании<span className='asterisk'>*</span></label><br />
+                    <label className="search-form-label pos-inn-label" htmlFor='inn'>ИНН компании<span className='asterisk' style={{color: setColorInn()}}>*</span></label><br />
                     <input className="search-form-input pos-inn-input" required id="inn" placeholder='10 цифр' style={{borderColor: setColorInn()}} onChange={changeInn}></input>
                     <label className="search-form-label pos-ton-label" htmlFor='ton'>Тональность</label><br />
                     <select className="search-form-select pos-ton-input" required id="ton">
@@ -249,16 +261,15 @@ export default function SearchPage() {
                         <option value='positive'>Позитивная</option>
                         <option value='negative'>Негативная</option>
                     </select>
-                    <label className="search-form-label pos-quan-label" htmlFor='quan' >Количество документов в выдаче<span className='asterisk'>*</span></label><br />
+                    <label className="search-form-label pos-quan-label" htmlFor='quan' >Количество документов в выдаче<span className='asterisk' style={{color: setColorQuan()}}>*</span></label><br />
                     <input className="search-form-input pos-quan-input" required id="quan" placeholder='от 1 до 1000' style={{borderColor: setColorQuan()}} onChange={changeQuan}></input>
-                          {!validState.quanValid ? <Errorinput classerr='input-error pos1'/>: null}
-                          {!validState.innValid ? <Errorinput classerr='input-error pos2'/>: null}
-                    <label className="search-form-label pos-date-label" htmlFor='date'>Диапазон поиска<span className='asterisk'>*</span></label><br />
-                    <DateInput classInput='pos-date-input' onChange={changeStartDate}/>
-                    <DateInput classInput='pos-date-input2' onChange={changeEndDate}/>
+                          {!validState.quanValid && validState.quan!='' ? <Errorinput classerr='input-error pos1'/>: null}
+                          {!validState.innValid && validState.inn!='' ? <Errorinput classerr='input-error pos2'/>: null}
+                    <label className="search-form-label pos-date-label" htmlFor='date'>Диапазон поиска<span className='asterisk' style={{color: setColorDate()}}>*</span></label><br />
+                    <DateInput classInput='pos-date-input' dateChange={changeStartDate} onChange={inputChange} color={setColorDate()}/>
+                    <DateInput classInput='pos-date-input2' dateChange={changeEndDate} onChange={inputChange} color={setColorDate()}/>
+                    {!validState.dateValid ? <Errorinput classerr='input-error pos3'/>: null}
 
-{/*                     <input type='date' defaultValue='2024-10-01' className="search-form-date pos-date-input" required id="date" style={{borderColor: setColorDate()}} onChange={changeStartDate} />                      
-                    <input type='date' defaultValue='2024-11-01' className="search-form-date pos-date-input2" required id="date" style={{borderColor: setColorDate()}} onChange={changeEndDate}></input> */}
                     <div className="check-boxes">
                         <ul>                            
                             <li><input className="input-check" type='checkbox' id="flns" onChange={(e) => setChecks({...checks, maxFlnss: e.target.checked})}/><label className="li-label" htmlFor='flns'>Признак максимальной полноты</label></li>
@@ -270,7 +281,7 @@ export default function SearchPage() {
                             <li><input className="input-check" type='checkbox' id="dgts" onChange={(e) => setChecks({...checks, isDgst: e.target.checked})}/><label className="li-label" htmlFor='dgts'>Включать сводки новостей</label></li>
                         </ul>
                     </div>
-                    <input className="search-button" type="submit" value="Поиск" />
+                    <input className="search-button" disabled={!validState.innValid||!validState.quanValid||!validState.dateValid} type="submit" value="Поиск"  />
                     <span className="under-text">* Обязательные к заполнению поля</span>
                 </form>
             </div>

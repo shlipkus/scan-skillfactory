@@ -56,7 +56,6 @@ function Login() {
         <main className="main-block">
             <h1 className='title'>Для оформления подписки 
             на тариф, необходимо авторизоваться.</h1>
-            <img className="char-pic" src={Chars} />
             <div className="login-form">
                 <img className="lock-pic" src={Lock} />
                 <div className="form-div">
@@ -67,8 +66,8 @@ function Login() {
                     <input className='login-input' required id='login' type="text" onChange={(e) => {setLogin(e.target.value)}}></input>
                     <label className='login-label pos-pass-label' htmlFor='pass'>Пароль:</label>
                     <input className='login-input pos-pass-input' required id='pass' type='password' style={{borderColor: setColor()}} onChange={(e) => {setPassword(e.target.value); setErrPass(false)}}></input>
+                    {errPass ? <span className='pass-error'>Неправильный пароль</span>: <span className='pass-error' style={{opacity: '0%'}}>Ytn</span>}
                     <input className='login-submit' type='submit' value='Войти' />
-                    {errPass ? <span className='pass-error'>Неправильный пароль</span>: null}
                     </form>
                     <a className="restore-link">Восстановить пароль</a>
                     <span className='login-label pos-alt-login'>Войти через:</span>
@@ -79,6 +78,7 @@ function Login() {
                     </div>
                 </div>
             </div>
+            <img className="char-pic" src={Chars} />
         </main>
     )
 }

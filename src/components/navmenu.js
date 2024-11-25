@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import '../styles/sidemenu.css';
 import footLogo from '../../public/assets/images/footlogo.svg?url';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {  useSelector } from "react-redux";
 
 export default function SideMenu(props) {
     const isAuth = useSelector((state) => state.auth);
+    const navigate = useNavigate();
     const [ state, setState ] = useState({
         dis: true,
         vis: 'no-vis',
@@ -15,8 +16,13 @@ export default function SideMenu(props) {
 
     const sign = <div className='sign'>
         <Link className='nav-link reg' onClick={handleClose} to="/">Зарегистрироваться</Link>
-        <button className='sign-in' >Войти</button>
+        <button className='sign-in' onClick={handleSignIn}>Войти</button>
     </div>
+
+    function handleSignIn() {
+        navigate('/login');
+        handleClose();
+    }
 
     function handleOpen () {
         console.log()

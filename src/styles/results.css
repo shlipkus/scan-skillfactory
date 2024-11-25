@@ -59,12 +59,14 @@
     background-size: cover;
     border: none;
     outline: none;
-    background-color: white;  
+    background-color: white;
+    cursor: pointer;  
 }
 
 .prev:disabled, .next:disabled {
     opacity: 0.4;
 }
+
 
 .slider-labels {
     position: relative;

@@ -19,7 +19,7 @@ export default function Summary() {
     let sumCards = [];
 
     if(sumData.length!=0 && !states.isLoad) {
-        let dis = sumData.length <= 8
+        let dis = sumData[0].length <= 8
         
         setStates({
             ...states,
@@ -31,6 +31,7 @@ export default function Summary() {
         })
     } 
 
+    
     
     if(sumData.length!=0){
         const totalData = sumData[0].data;
