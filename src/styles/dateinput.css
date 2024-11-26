@@ -101,7 +101,7 @@
 .years li {
     margin-left: 0px;
     padding-left: 20px;
-    margin-top: 5px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
@@ -134,7 +134,7 @@
 .months li {
     margin-left: 0px;
     padding-left: 20px;
-    margin-top: 5px;
+    margin-top: 10px;
     cursor: pointer;
 }
 

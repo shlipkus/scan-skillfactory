@@ -67,7 +67,7 @@ export default function Results() {
         <main className='main-result'>
             <div className="page-head">
                 <h1 className="title pre">{"Ищем. Скоро \n будут результаты"}</h1>
-                <h2 className='subtitle'>{'Поиск может занять некоторое время, \n просим сохранять терпение.'}</h2>
+                <h2 className='subtitle res'>{'Поиск может занять некоторое время, \n просим сохранять терпение.'}</h2>
                 <img className='pos-svg4' src={resMain} width={552} height={369} />
             </div>
             <Summary />
