@@ -3,7 +3,7 @@ import "../styles/scanmain.css"
 import ScSlider from "./carousel";
 import { useNavigate } from "react-router-dom";
 import TarifCard from "./tarifcard";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import man from '../../public/assets/images/main.svg?url'
 
 function ScanMain() {
