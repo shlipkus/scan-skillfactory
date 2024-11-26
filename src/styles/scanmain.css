@@ -69,7 +69,7 @@ main {
     font-weight: 900;
 }
 
-button:hover:not(.prev, .next) {
+button:hover:not(.prev, .next, .menu-button, .close-button) {
     cursor: pointer;
     background-color: darkblue;
 }

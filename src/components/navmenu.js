@@ -25,11 +25,16 @@ export default function SideMenu(props) {
     }
 
     function handleOpen () {
-        console.log()
+        const el = document.getElementById('root');
+        el.classList.remove('scroll-on');
+        el.classList.add('scroll-off');
         setState({vis: 'vis', dis: !state.dis, run: 'run', zInd: 'on'})
     }
 
     function handleClose () {
+        const el = document.getElementById('root');
+        el.classList.remove('scroll-off');
+        el.classList.add('scroll-on');
         setState({vis: 'no-vis', dis: !state.dis, run: 'back-run', zInd: 'under'})
     }
 

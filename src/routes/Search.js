@@ -13,7 +13,7 @@ export default function SearchPage() {
     const currentDate = new Date();
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const Errorinput = (props) => <h1 className={props.classerr}>Введите корректные данные</h1>;
+    const Errorinput = (props) => <span className={props.classerr}>Введите корректные данные</span>;
     const [validState, setValid] = useState({inn: '', innValid: false, ton: 'any', tonValid: false, quan: '', quanValid: false, startDate: currentDate, endDate: currentDate, dateValid: true});
     const [checks, setChecks] =useState({maxFlnss: false, inBsnsNews: null, onlyMnRl: false, onlyWthRsk: false, isTchNws: false, isAnnc: false, isDgst: false});
 
@@ -246,29 +246,29 @@ export default function SearchPage() {
     
     return (
         <main className='main-block'>
-            <h1 className="title">найдите необходимые данные в пару кликов</h1>
+            <h1 className="title adpt">найдите необходимые данные в пару кликов</h1>
             <h2 className='subtitle'>{'Задайте параметры поиска. \n Чем больше заполните, тем точнее поиск'}</h2>
             <img className='pos-svg1' src={Docs} width={91} height={111} />
-            <img className='pos-svg2' src={Fold} width={140} height={68} />
-            <img className='pos-svg3' src={Serg} width={443} height={470} />
+            <img className='pos-svg2' src={Fold} width={140} height={68} />            
             <div className='search-block'>
                 <form onSubmit={handleSubmit} >
                     <label className="search-form-label pos-inn-label" htmlFor='inn'>ИНН компании<span className='asterisk' style={{color: setColorInn()}}>*</span></label><br />
                     <input className="search-form-input pos-inn-input" required id="inn" placeholder='10 цифр' style={{borderColor: setColorInn()}} onChange={changeInn}></input>
+                    {!validState.innValid && validState.inn!='' ? <Errorinput classerr='input-error pos1'/>: <span className="input-error" style={{opacity: '0%'}}>error</span>}
                     <label className="search-form-label pos-ton-label" htmlFor='ton'>Тональность</label><br />
                     <select className="search-form-select pos-ton-input" required id="ton">
                         <option value='any'>Любая</option>
                         <option value='positive'>Позитивная</option>
                         <option value='negative'>Негативная</option>
                     </select>
+                    <span className="input-error" style={{opacity: '0%'}}>error</span>
                     <label className="search-form-label pos-quan-label" htmlFor='quan' >Количество документов в выдаче<span className='asterisk' style={{color: setColorQuan()}}>*</span></label><br />
                     <input className="search-form-input pos-quan-input" required id="quan" placeholder='от 1 до 1000' style={{borderColor: setColorQuan()}} onChange={changeQuan}></input>
-                          {!validState.quanValid && validState.quan!='' ? <Errorinput classerr='input-error pos1'/>: null}
-                          {!validState.innValid && validState.inn!='' ? <Errorinput classerr='input-error pos2'/>: null}
+                          {!validState.quanValid && validState.quan!='' ? <Errorinput classerr='input-error pos2'/>: <span className="input-error" style={{opacity: '0%'}}>error</span>}
                     <label className="search-form-label pos-date-label" htmlFor='date'>Диапазон поиска<span className='asterisk' style={{color: setColorDate()}}>*</span></label><br />
                     <DateInput classInput='pos-date-input' dateChange={changeStartDate} onChange={inputChange} color={setColorDate()}/>
                     <DateInput classInput='pos-date-input2' dateChange={changeEndDate} onChange={inputChange} color={setColorDate()}/>
-                    {!validState.dateValid ? <Errorinput classerr='input-error pos3'/>: null}
+                    {!validState.dateValid ? <Errorinput classerr='input-error pos3'/>: <span className="input-error" style={{opacity: '0%'}}>error</span>}
 
                     <div className="check-boxes">
                         <ul>                            
@@ -285,6 +285,7 @@ export default function SearchPage() {
                     <span className="under-text">* Обязательные к заполнению поля</span>
                 </form>
             </div>
+            <div className='bot-img-div'><img className='pos-svg3' src={Serg} width={443} height={470} /></div>
         </main>
     )
 }

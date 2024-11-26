@@ -1,7 +1,4 @@
-.date-div {
-    margin: 0;
-    padding: 0;
-}
+
 
 .input-block {
     width: 176px;
@@ -169,5 +166,42 @@
     color: white;
 }
 
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
+    .input-block {
+        width: 335px;
+    }
+    
+    .date-input {
+        width: 283px;
+    }
+
+    .dates {
+        position: absolute;
+        top: -263px;
+        margin-top: 2px;
+        width: 335px;
+        height: 255px;
+        border-radius: 5px;
+        border: 1px solid #C7C7C7;
+        background: #FFFFFF;
+        z-index: 1;
+    }
+
+    .date-select {
+        margin: 0 0 0 50px;
+    }
+
+    .days {
+        display: grid;
+        list-style-type: none;
+        width: 230px;
+        height: 150px;
+        margin-left: 25px;
+        margin-top: 10px;
+        padding: 0;
+        grid-template-columns: repeat(7, 40px);
+        grid-template-rows: repeat(5, 40px);
+    }
+}
 
 

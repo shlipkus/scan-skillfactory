@@ -188,4 +188,14 @@
         border: 2px solid white;
     }
 
+    .scroll-off {
+        height: 90vh;
+        overflow: hidden;
+    }
+
+    .scroll-on {
+        height: auto;
+        overflow: auto;
+    }
+
 }

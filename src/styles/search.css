@@ -278,3 +278,129 @@
     top: 460px;
     left: 125px;
 }
+
+@media screen and (((max-device-width: 480px) and (orientation: portrait)) or ((max-device-width: 1080px) and (orientation: landscape))) {
+    .adpt {
+        display: block;
+        font: 900 28px/33px 'Ferry';
+        height: auto;
+    }
+    .subtitle {
+        position: static;
+        display: block;
+        width: 297px;
+        height: auto;
+        margin: 20px 0 0 20px;
+        padding: 0;
+        font: 400 18px/21px 'Inter'
+    }
+
+    .pos-svg1 {
+        position: absolute;
+        top: 210px;
+        left: 305px;
+        width: 58px;
+        height: 71px;
+    }
+
+    .pos-svg2 {
+        display: none;
+    }
+    
+    .pos-svg3 {
+        position: static;
+        width: 380px;
+        height: 403px;
+        margin-left: 35px;
+        display: none;
+    }
+
+    .search-block {
+        position: static;
+        width: 100vw;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 0px #00000033;
+        margin: 20px auto;
+    }
+
+    .search-block br {
+        display: none;
+    }
+
+   
+    .search-form-input {
+        width: 335px;
+        margin: 20px 0 0 15px;
+    }
+
+    .search-form-select {
+        width: 335px;
+        margin: 20px 0 0 15px;
+    }
+
+    .pos-ton-label, .pos-quan-label {
+        position: static;
+        display: inline-block;
+        margin: 13px 0 0 15px;
+    }
+
+    .pos-inn-label {
+        position: static;
+        display: inline-block;
+        margin: 30px 0 0 15px;
+    }  
+
+    .pos-inn-input, .pos-ton-input, .pos-quan-input {
+        position: static;
+    }
+
+    .check-boxes {
+        display: none;
+    }
+   
+   
+    .pos-date-label {
+        position: static;
+        display: inline-block;
+        margin: 13px 0 0 15px;
+    }
+    
+    .pos-date-input, .pos-date-input2 {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 15px 0 0 15px;
+    }
+
+    .input-error {
+        font: 400 14px/17px 'Inter';
+        color: #FF5959;
+        display: block;
+        text-align: center;
+        position: static;
+    }
+    
+    .search-button {
+        width: 340px;
+        margin: 30px 0 0px 15px;
+        padding: 0;
+        position: static;
+    }
+
+    .under-text {
+        position: static;
+        display: inline-block;
+        margin: 10px 0 40px 15px;        
+    }
+
+    .bot-img-div {
+        width: 100vw;
+        height: 403px;
+        margin-bottom: 20px;
+        background-image: url("../../public/assets/images/chel.svg");
+        background-size: 380px 403px;
+        background-position-x: 30px;
+    }
+   
+}
